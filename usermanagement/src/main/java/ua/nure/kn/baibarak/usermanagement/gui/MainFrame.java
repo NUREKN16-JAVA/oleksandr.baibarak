@@ -20,7 +20,7 @@ public class MainFrame extends JFrame {
 	private BrowsePanel browsePanel;
 	private AddPanel addPanel;
 	private EditPanel editPanel;
-    private DetailsPanel detailsPanel;
+	private DetailsPanel detailsPanel;
 	private UserDao dao;
 
 	public MainFrame() {
@@ -28,15 +28,15 @@ public class MainFrame extends JFrame {
 		dao = DaoFactory.getInstance().getUserDao();
 		initialize();
 	}
-	
+
 	public UserDao getDao() {
 		return dao;
 	}
-	
+
 	private void initialize() {
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setSize(FRAME_WIDTH, FRAME_HEIGHT);
-		this.setTitle(Messages.getString("MainFrame.user_management")); //localize //$NON-NLS-1$
+		this.setTitle(Messages.getString("MainFrame.user_management")); // localize //$NON-NLS-1$
 		this.setContentPane(getContentPanel());
 	}
 
@@ -44,7 +44,7 @@ public class MainFrame extends JFrame {
 		if (contentPanel == null) {
 			contentPanel = new JPanel();
 			contentPanel.setLayout(new BorderLayout());
-			contentPanel.add(getBrowsePanel(),BorderLayout.CENTER);
+			contentPanel.add(getBrowsePanel(), BorderLayout.CENTER);
 		}
 		return contentPanel;
 	}
@@ -56,7 +56,7 @@ public class MainFrame extends JFrame {
 		((BrowsePanel) browsePanel).initTable();
 		return browsePanel;
 	}
-	
+
 	public void showBrowsePanel() {
 		showPanel(getBrowsePanel());
 	}
@@ -68,14 +68,14 @@ public class MainFrame extends JFrame {
 
 	public void showAddPanel() {
 		showPanel(getAddPanel());
-		
+
 	}
 
 	private void showPanel(JPanel panel) {
 		getContentPane().add(panel, BorderLayout.CENTER);
 		panel.setVisible(true);
 		panel.repaint();
-		
+
 	}
 
 	private AddPanel getAddPanel() {
@@ -86,29 +86,29 @@ public class MainFrame extends JFrame {
 	}
 
 	public void showEditPanel(User user) {
-        getEditPanel().setUser(user);
-        showPanel(getEditPanel());
+		getEditPanel().setUser(user);
+		showPanel(getEditPanel());
 
-    }
+	}
 
-    private EditPanel getEditPanel() {
-        if (editPanel == null) {
-            editPanel = new EditPanel(this);
-        }
-        return editPanel;
-    }
+	private EditPanel getEditPanel() {
+		if (editPanel == null) {
+			editPanel = new EditPanel(this);
+		}
+		return editPanel;
+	}
 
-    public void showDetailsPanel(User user) {
-        getDetailsPanel().setUser(user);
-        showPanel(getDetailsPanel());
+	public void showDetailsPanel(User user) {
+		getDetailsPanel().setUser(user);
+		showPanel(getDetailsPanel());
 
-    }
+	}
 
-    private DetailsPanel getDetailsPanel() {
-        if (detailsPanel == null) {
-            detailsPanel = new DetailsPanel(this);
-        }
-        return detailsPanel;
-    }
+	private DetailsPanel getDetailsPanel() {
+		if (detailsPanel == null) {
+			detailsPanel = new DetailsPanel(this);
+		}
+		return detailsPanel;
+	}
 
 }

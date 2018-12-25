@@ -8,6 +8,7 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 
 import ua.nure.kn.baibarak.usermanagement.User;
+import ua.nure.kn.baibarak.usermanagement.util.Messages;
 
 public class DetailsPanel extends AddPanel {
 	

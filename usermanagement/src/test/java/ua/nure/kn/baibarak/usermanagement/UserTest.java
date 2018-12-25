@@ -15,9 +15,9 @@ public class UserTest {
 	private static final Long ID = 1L;
 	
 	//Test 1: test values of User's name
-	private static final String FIRST_NAME = "Ivan";
-	private static final String LAST_NAME = "Ivanov";
-	private static final String FULL_NAME_ETALONE = "Ivanov, Ivan";
+	private static final String FIRST_NAME = "Иван";
+	private static final String LAST_NAME = "Иванов";
+	private static final String FULL_NAME_ETALONE = "Иванов, Иван";
 	
 	private static final int YEAR_OF_BIRTH = 1971;
 	

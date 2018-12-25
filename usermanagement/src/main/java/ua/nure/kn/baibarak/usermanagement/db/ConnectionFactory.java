@@ -1,4 +1,4 @@
-package ua.nure.kn.skorik.usermanagement.db;
+package ua.nure.kn.baibarak.usermanagement.db;
 
 import java.sql.Connection;
 

@@ -114,7 +114,7 @@ public class BrowsePanel extends JPanel implements ActionListener {
 			model = new UserTableModel(parent.getDao().findAll());
 		} catch (DatabaseException e) {
 			model = new UserTableModel(new ArrayList());
-			JOptionPane.showMessageDialog(this, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE); //$NON-NLS-1$
+			JOptionPane.showMessageDialog(this, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
 		}
 		getUserTable().setModel(model);
 	}
@@ -128,7 +128,8 @@ public class BrowsePanel extends JPanel implements ActionListener {
 		} else if ("edit".equalsIgnoreCase(actionCommand)) { //$NON-NLS-1$
 			int selectedRow = userTable.getSelectedRow();
 			if (selectedRow == -1) {
-				JOptionPane.showMessageDialog(this, Messages.getString("BrowsePanel.сhoose_user_edit"), "Edit", JOptionPane.INFORMATION_MESSAGE); //$NON-NLS-1$ //$NON-NLS-2$
+				JOptionPane.showMessageDialog(this, Messages.getString("BrowsePanel.сhoose_user_edit"), "Edit", //$NON-NLS-1$ //$NON-NLS-2$
+						JOptionPane.INFORMATION_MESSAGE);
 				return;
 			}
 			User user = ((UserTableModel) userTable.getModel()).getUser(selectedRow);
@@ -137,7 +138,8 @@ public class BrowsePanel extends JPanel implements ActionListener {
 		} else if ("delete".equalsIgnoreCase(actionCommand)) { //$NON-NLS-1$
 			int selectedRow = userTable.getSelectedRow();
 			if (selectedRow == -1) {
-				JOptionPane.showMessageDialog(this, Messages.getString("BrowsePanel.сhoose_user_delete"), "Delete", JOptionPane.INFORMATION_MESSAGE); //$NON-NLS-1$ //$NON-NLS-2$
+				JOptionPane.showMessageDialog(this, Messages.getString("BrowsePanel.сhoose_user_delete"), "Delete", //$NON-NLS-1$ //$NON-NLS-2$
+						JOptionPane.INFORMATION_MESSAGE);
 				return;
 			}
 			int answ = JOptionPane.showConfirmDialog(null, Messages.getString("BrowsePanel.confirm_delete"), //$NON-NLS-1$
@@ -164,6 +166,7 @@ public class BrowsePanel extends JPanel implements ActionListener {
 			this.setVisible(false);
 			parent.showDetailsPanel(user);
 		}
+
 	}
 
 }
